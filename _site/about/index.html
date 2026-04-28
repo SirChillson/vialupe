@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Via Lupe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <a class="nav-title" href="/">Via Lupe</a>
+      <div class="nav-links">
+        <a href="/writing">Writing</a>
+        <a href="/about">About</a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">●</button>
+      </div>
+    </nav>
+    <main>
+      
+<h1>About</h1>
+
+<p>I am an academic librarian with interests in research, biblical languages, philosophy, and film. I studied Koine Greek and Hebrew at the graduate level, writing my thesis on the concept of lupe — grief as a productive, transformative force in Pauline thought.</p>
+
+<p>This site is a place for careful thinking in short form. Not a blog, not an academic portfolio. Something closer to a commonplace book — thoughts worth keeping, written to be read.</p>
+
+<p>Via lupe is the thread running through all of it. The journey grief makes possible.</p>
+    </main>
+  </div>
+
+<script>
+  const toggle = document.getElementById('themeToggle');
+  const body = document.body;
+
+function updateToggle() {
+  const isDark = body.classList.contains('dark') || 
+    (!body.classList.contains('light') && 
+     window.matchMedia('(prefers-color-scheme: dark)').matches);
+  toggle.textContent = '●';
+  toggle.style.color = isDark ? '#e8e4de' : '#0a0a0a';
+}
+
+  // On load, apply saved preference
+  const saved = localStorage.getItem('theme');
+  if (saved) {
+    body.classList.add(saved);
+  }
+
+  updateToggle();
+
+  toggle.addEventListener('click', () => {
+    if (body.classList.contains('dark')) {
+      body.classList.remove('dark');
+      body.classList.add('light');
+      localStorage.setItem('theme', 'light');
+    } else if (body.classList.contains('light')) {
+      body.classList.remove('light');
+      body.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (prefersDark) {
+        body.classList.add('light');
+        localStorage.setItem('theme', 'light');
+      } else {
+        body.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+      }
+    }
+    updateToggle();
+  });
+</script>
+</body>
+</html>
