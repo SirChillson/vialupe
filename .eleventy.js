@@ -1,5 +1,6 @@
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/css");
+  eleventyConfig.addPassthroughCopy("./src/*.{png,svg,ico,webmanifest}");
 
   // Date filter
   eleventyConfig.addFilter("readableDate", (dateObj) => {
