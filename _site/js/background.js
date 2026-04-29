@@ -26,7 +26,7 @@ function init() {
         size: size,
         // CRANKED UP: Exponential depth. 
         // Larger particles now move MUCH faster than smaller ones.
-        parallaxFactor: Math.pow(size, 2) * 0.15 
+        parallaxFactor: Math.pow(size, 2) * 0
       });
     }
   }
