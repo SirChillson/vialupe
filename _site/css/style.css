@@ -197,3 +197,36 @@ body.dark .theme-toggle {
 .theme-toggle:hover {
   color: var(--accent);
 }
+
+/* Home page lupe rubbing */
+.ghost-link {
+  font-family: 'EB Garamond', serif;
+  font-size: 1.8rem;
+  color: var(--text);
+  text-decoration: none;
+  opacity: 0; /* Totally hidden */
+  transition: opacity 0.5s ease; /* Smooth fade back when they stop */
+  pointer-events: none; /* Can't click it yet */
+  display: inline-block;
+  cursor: pointer;
+  letter-spacing: 0.1em;
+  filter: blur(5px); /* Start blurry */
+  transition: opacity 0.5s ease, filter 0.8s ease;
+}
+
+.ghost-link.revealed {
+  pointer-events: auto; /* Now it's a real link */
+  filter: blur(0px); /* Sharpens as it reaches full opacity */
+}
+
+/* Optional: a subtle hover effect once revealed */
+.ghost-link.revealed:hover {
+  color: var(--subtle);
+  /*text-shadow: 0 0 8px var(--subtle); */
+}
+#secret-area {
+  min-height: 200px;
+  width: 100%;
+  position: relative;
+  z-index: 10; /* Make sure it's ABOVE the background canvas */
+}
