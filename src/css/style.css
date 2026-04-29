@@ -41,14 +41,14 @@
   /* Base */
   html {
     font-size: var(--font-size);
-    background: var(--bg);
+    background: transparent !important;
     color: var(--text);
   }
   
   body {
     font-family: 'EB Garamond', Georgia, serif;
     line-height: var(--line-height);
-    background: var(--bg);
+    background: transparent !important;
     color: var(--text);
     letter-spacing: 0.01em;
     -webkit-font-smoothing: antialiased;
