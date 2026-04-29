@@ -212,6 +212,8 @@ body.dark .theme-toggle {
   letter-spacing: 0.1em;
   filter: blur(5px); /* Start blurry */
   transition: opacity 0.5s ease, filter 0.8s ease;
+  -webkit-tap-highlight-color: transparent; /* Removes the blue box on tap */
+  user-select: none; /* Prevents them from accidentally "selecting" the hidden text */
 }
 
 .ghost-link.revealed {
@@ -224,9 +226,65 @@ body.dark .theme-toggle {
   color: var(--subtle);
   /*text-shadow: 0 0 8px var(--subtle); */
 }
+
 #secret-area {
   min-height: 200px;
   width: 100%;
   position: relative;
   z-index: 10; /* Make sure it's ABOVE the background canvas */
+}
+
+/* Lupe Page Specifics */
+.definition-page {
+  max-width: 500px;
+  margin: 4rem auto;
+  font-weight: 400;
+}
+
+.archival-header h1 {
+  font-size: 3.5rem;
+  margin-bottom: 0;
+  font-weight: 400;
+}
+
+.phonetic {
+  font-family: monospace;
+  font-size: 0.8rem;
+  opacity: 0.6;
+  margin-top: -0.5rem;
+  margin-bottom: 2rem;
+}
+
+.etymology blockquote {
+  border-left: 2px solid var(--subtle);
+  padding-left: 1.5rem;
+  margin: 2rem 0;
+  font-style: italic;
+  color: var(--text);
+  opacity: 0.9;
+}
+
+.marginalia-note {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(128, 128, 128, 0.2);
+}
+
+.marginalia-note h2 {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  opacity: 0.7;
+}
+
+.back-link {
+  display: block;
+  margin-top: 4rem;
+  font-size: 0.85rem;
+  color: var(--subtle);
+  text-decoration: none;
+}
+
+.back-link:hover {
+  color: var(--text)
 }

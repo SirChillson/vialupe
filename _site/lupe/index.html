@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="ViaLupe" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>λύπη — Via Lupe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <canvas id="bg-canvas" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1;"></canvas>
+  <div class="container">
+    <nav>
+      <a class="nav-title" href="/">Via Lupe</a>
+      <div class="nav-links">
+        <a href="/writing">Writing</a>
+        <a href="/about">About</a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">●</button>
+      </div>
+    </nav>
+    <main>
+      
+<article class="definition-page">
+  <header class="archival-header">
+    <h1 lang="grc">λύπη</h1>
+    <br>
+    <p class="phonetic">/ˈly.pɛː/ • (lu-pe)</p>
+  </header>
+
+  <section class="etymology">
+    <p>
+      In Koine Greek, <em>λύπη</em> is often translated as pain, grief, or distress. In this context, it is understood as a <strong>lens</strong>. A lens through which we observe reality.
+    </p>
+    
+    <blockquote>
+      "Via lupe -- by way of grief, observing reality through the lens of grief"
+    </blockquote>
+
+    <p>
+      Grief is not merely a destination or an obstacle; it is a way of seeing. To look <em>via lupe</em> is to acknowledge that grief can sharpen or blur our perception of the world. It is to understand that grief informs observation and observations deserve to be remembered, saved, and shared. 
+    </p>
+  </section>
+
+  <section class="marginalia-note">
+    <h2>Note on the $\lambda$</h2>
+    <p>
+      The Lambda is the root. It represents the logic of the archive and the first letter of the feeling. It stands as a bridge between the mathematical certainty of code and the fluid, organic nature of human memory.
+    </p>
+  </section>
+
+  <footer>
+    <a href="/" class="back-link">← Return to the margins</a>
+  </footer>
+</article>
+    </main>
+  </div>
+
+<script>
+  const toggle = document.getElementById('themeToggle');
+  const body = document.body;
+
+function updateToggle() {
+  const isDark = body.classList.contains('dark') || 
+    (!body.classList.contains('light') && 
+     window.matchMedia('(prefers-color-scheme: dark)').matches);
+  toggle.textContent = '●';
+  toggle.style.color = isDark ? '#e8e4de' : '#0a0a0a';
+}
+
+  // On load, apply saved preference
+  const saved = localStorage.getItem('theme');
+  if (saved) {
+    body.classList.add(saved);
+  }
+
+  updateToggle();
+
+  toggle.addEventListener('click', () => {
+    if (body.classList.contains('dark')) {
+      body.classList.remove('dark');
+      body.classList.add('light');
+      localStorage.setItem('theme', 'light');
+    } else if (body.classList.contains('light')) {
+      body.classList.remove('light');
+      body.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (prefersDark) {
+        body.classList.add('light');
+        localStorage.setItem('theme', 'light');
+      } else {
+        body.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+      }
+    }
+    updateToggle();
+  });
+    
+</script>
+<script src="/js/background.js"></script>
+<script src="/js/discovery.js"></script>
+</body>
+</html>
