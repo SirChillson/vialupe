@@ -9,7 +9,7 @@
   :root {
     --bg: #f9f6f1;
     --text: #1a1a1a;
-    --subtle: #888;
+    --subtle: #db5f25;
     --accent: #8b3a3a;
     --max-width: 620px;
     --font-size: 19px;
@@ -21,7 +21,7 @@
     :root {
       --bg: #1e1e1e;
       --text: #e8e4de;
-      --subtle: #666;
+      --subtle: #db5f25;
       --accent: #c47a7a;
     }
   }
@@ -29,14 +29,14 @@
   body.dark {
     --bg: #1e1e1e;
     --text: #e8e4de;
-    --subtle: #666;
+    --subtle: #db5f25;
     --accent: #c47a7a;
   }
   
   body.light {
     --bg: #f9f6f1;
     --text: #0a0a0a;
-    --subtle: #888;
+    --subtle: #db5f25;
     --accent: #8b3a3a;
   }
   
@@ -144,12 +144,12 @@
     justify-content: space-between;
     align-items: baseline;
     padding: 0.75rem 0;
-    border-bottom: 1px solid var(--subtle);
+    border-bottom: 1px solid #333;
     opacity: 0.85;
   }
   
   .writing-list li:first-child {
-    border-top: 1px solid var(--subtle);
+    border-top: 1px solid #333;
   }
   
   .writing-list a {
@@ -166,17 +166,6 @@
     color: var(--subtle);
     white-space: nowrap;
     margin-left: 2rem;
-  }
-  
-  /* Individual writing page */
-  .writing-header {
-    margin-bottom: 3rem;
-  }
-  
-  .writing-header .date {
-    font-size: 0.8rem;
-    color: var(--subtle);
-    margin-top: 0.4rem;
   }
   
   /* Footer spacing */
