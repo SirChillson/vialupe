@@ -11,7 +11,6 @@
     --text: #1a1a1a;
     --hover: #666;
     --subtle: #db5f25;
-    --accent: #8b3a3a;
     --max-width: 620px;
     --font-size: 19px;
     --line-height: 1.8;
@@ -24,7 +23,6 @@
       --text: #e8e4de;
       --hover: #666;
       --subtle: #db5f25;
-      --accent: #c47a7a;
     }
   }
   
@@ -32,14 +30,12 @@
     --bg: #1e1e1e;
     --text: #e8e4de;
     --subtle: #db5f25;
-    --accent: #c47a7a;
   }
   
   body.light {
     --bg: #f9f6f1;
     --text: #0a0a0a;
     --subtle: #db5f25;
-    --accent: #8b3a3a;
   }
   
   /* Base */
