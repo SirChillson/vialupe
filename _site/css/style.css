@@ -9,6 +9,7 @@
   :root {
     --bg: #f9f6f1;
     --text: #1a1a1a;
+    --hover: #666;
     --subtle: #db5f25;
     --accent: #8b3a3a;
     --max-width: 620px;
@@ -21,6 +22,7 @@
     :root {
       --bg: #1e1e1e;
       --text: #e8e4de;
+      --hover: #666;
       --subtle: #db5f25;
       --accent: #c47a7a;
     }
@@ -158,7 +160,7 @@
   }
   
   .writing-list a:hover {
-    color: var(--accent);
+    color: var(--hover);
   }
   
   .writing-list .date {
