@@ -85,7 +85,7 @@
   
   .nav-links {
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
   }
   
   .nav-links a {
@@ -361,4 +361,19 @@ body.dark .theme-toggle {
   opacity: 1 !important;
   /* The 8s fade happens HERE */
   transition: opacity 8s ease-in !important; 
+}
+
+.hidden-nav-link {
+  display: none; /* Default state */
+  font-family: 'EB Garamond', serif;
+  font-weight: 400;
+  font-size: .9rem !important;
+  color: var(--subtle); /* Keep it in the orange accent color */
+  text-decoration: none;
+}
+
+/* When the discovery is confirmed, we show it */
+.nav-discovered {
+  display: inline-block;
+
 }

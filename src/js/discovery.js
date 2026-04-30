@@ -56,4 +56,12 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   animate();
+
+  // --- THE PERMANENT RECORD ---
+  link.addEventListener('click', () => {
+    // This tells the browser: "The secret is out."
+    localStorage.setItem('lupe_discovered', 'true');
+    console.log("Archive updated: 'lupe' has been cataloged.");
+  });
+
 });

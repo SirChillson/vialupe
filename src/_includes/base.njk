@@ -21,6 +21,7 @@
       <a class="nav-title" href="/">Via Lupe</a>
       <div class="nav-links">
         <a href="/writing">Writing</a>
+        <a href="/lupe" id="nav-lupe" class="hidden-nav-link" lang="grc">λύπη</a>
         <a href="/about">About</a>
         <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">●</button>
       </div>
@@ -73,6 +74,22 @@ function updateToggle() {
   });
     
 </script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const navLupe = document.getElementById('nav-lupe');
+  
+  // If the secret has been found, unhide the nav link
+  if (localStorage.getItem('lupe_discovered') === 'true') {
+    if (navLupe) {
+      navLupe.style.display = 'inline-block';
+      // Optional: add a class for that ghostly fade-in we discussed
+      navLupe.classList.add('nav-discovered');
+    }
+  }
+});
+</script>
+
 <script src="/js/background.js"></script>
 <script src="/js/discovery.js"></script>
 <script src="/js/identity.js"></script>
