@@ -2,6 +2,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const nameEl = document.getElementById('name-glitch');
     if (!nameEl) return;
 
+    // --- PERSISTENCE CHECK ---
+    // Check if the user has already triggered the breakdown
+    if (localStorage.getItem('identity_state') === 'nobody') {
+        nameEl.innerText = "Mr. Nobody";
+        nameEl.style.color = "var(--subtle)";
+        nameEl.classList.add('nobody');
+        // Lock the width immediately so the rest of the sentence is stable
+        nameEl.style.minWidth = "5.3rem"; 
+        return; // Stop the script here so the click events never even load
+    }
+
     // 1. Helper function to grab current theme colors
     function getThemeColors() {
         const style = getComputedStyle(document.body);
@@ -33,6 +44,8 @@ document.addEventListener('DOMContentLoaded', () => {
             nameEl.style.color = "var(--subtle)";
             nameEl.classList.remove('void');
             nameEl.classList.add('nobody');
+            // --- SAVE THE LOSS ---
+            localStorage.setItem('identity_state', 'nobody');
         }, 1500); 
     }
 
