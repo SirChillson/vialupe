@@ -265,7 +265,7 @@ body.dark .theme-toggle {
 }
 
 .marginalia-note {
-  margin-top: 4rem;
+  margin-top: 2rem;
   padding-top: 2rem;
   border-top: 1px solid rgba(128, 128, 128, 0.2);
 }
@@ -275,6 +275,7 @@ body.dark .theme-toggle {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   opacity: 0.7;
+  margin-top: .1rem;
 }
 
 .back-link {
@@ -287,4 +288,33 @@ body.dark .theme-toggle {
 
 .back-link:hover {
   color: var(--text)
+}
+
+/* Formatting for the TDNT quote to add depth */
+.tdnt-quote {
+  /* Subtle vertical bar in your accent color for 'hanging punctuation' */
+  border-left: 2px solid var(--subtle);
+  padding-left: 1.5rem;
+  margin: 1.5rem 0;
+  
+  /* Slight opacity reduction for the dense quote text */
+  opacity: 0.95;
+  
+  /* A precise, structured look. Consider justify for this dense source. */
+  text-align: justify;
+  
+  /* Ensure the last element doesn't add extra space */
+  p:last-of-type {
+      margin-bottom: 0.5rem;
+  }
+}
+
+/* Formal citation styling */
+.tdnt-quote cite {
+  display: block;
+  font-size: 0.9rem;
+  font-style: normal; /* Override default italics for formal refs */
+  color: var(--text); /* A slightly less dominant color than the quote */
+  margin-top: 1rem;
+  text-align: right; /* Standard for pull quotes/formal citations */
 }
