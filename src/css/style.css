@@ -463,6 +463,8 @@ body.dark .theme-toggle {
   z-index: 10;
   pointer-events: none;
   line-height: 1.1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
   /* Container is now always visible to show the 'Best' score */
 }
 
@@ -480,4 +482,8 @@ body.dark .theme-toggle {
 /* Helper class for the streak count */
 .hidden {
   opacity: 0;
+}
+/* Use this class to show it */
+.cube-score:not(.hidden) {
+  opacity: 1;
 }
