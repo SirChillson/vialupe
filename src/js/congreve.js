@@ -35,14 +35,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (isHomePage) {
         if (highScore < 3) {
             // LOW SCORE: Cube is a static object, no 'alive' behavior
-            x = window.innerWidth - 150;
+            x = window.innerWidth - 300;
             hasEntered = true; 
             cube.style.opacity = "1";
         } else {
             // UNLOCKED: Cube is alive. 
             if (isFirstHomeVisit) {
                 // First time this session: waiting at his post
-                x = window.innerWidth - 150;
+                x = window.innerWidth - 300;
                 hasEntered = true;
                 cube.style.opacity = "1";
                 sessionStorage.setItem('home_intro_done', 'true');
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Returning home: hops in after 3 seconds
                 x = window.innerWidth + 600;
                 cube.style.opacity = "0";
-                setTimeout(() => { if (!isBanished) readyToCreep = true; }, 3000);
+                setTimeout(() => { if (!isBanished) readyToCreep = true; }, 2300);
             }
         }
     } else {
