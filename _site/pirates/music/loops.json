@@ -1,0 +1,26 @@
+{
+ "sail": {
+  "bars": 44,
+  "loopSeconds": 60.0
+ },
+ "battle": {
+  "bars": 32,
+  "loopSeconds": 51.891891891891895
+ },
+ "port": {
+  "bars": 32,
+  "loopSeconds": 38.4
+ },
+ "sail2": {
+  "bars": 32,
+  "loopSeconds": 80.0
+ },
+ "battle2": {
+  "bars": 48,
+  "loopSeconds": 49.09090909090909
+ },
+ "port2": {
+  "bars": 32,
+  "loopSeconds": 58.18181818181818
+ }
+}

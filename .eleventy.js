@@ -5,6 +5,10 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./src/js");
   eleventyConfig.addPassthroughCopy("./src/images");
 
+  // Faster Than Wind: a pre-built Vite game, copied through untouched
+  eleventyConfig.addPassthroughCopy("src/pirates");
+  eleventyConfig.ignores.add("src/pirates/**");
+
   // Date filter
   eleventyConfig.addFilter("readableDate", (dateObj) => {
     return new Date(dateObj).toLocaleDateString('en-US', {
