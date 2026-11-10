@@ -26,6 +26,5 @@ Because the post list is built at deploy time, the site needs a rebuild to show 
 ## Layout
 
 - `src/_includes/base.njk`: page shell, nav, theme toggle
-- `src/_includes/cube.njk` and `src/js/cube.js`: the wooden cube on the home page
 - `src/_data/substack.js`: fetches the Substack feed at build time
 - `src/pirates/`: the Faster Than Wind game, served at `/pirates/` but not linked from the nav

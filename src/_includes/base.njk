@@ -40,10 +40,6 @@
       </div>
     </nav>
 
-    {%- if page.url == "/" %}
-    {% include "cube.njk" %}
-    {%- endif %}
-
     <main>
       {{ content | safe }}
     </main>
@@ -69,8 +65,5 @@
     })();
   </script>
   <script src="/js/background.js"></script>
-  {%- if page.url == "/" %}
-  <script src="/js/cube.js"></script>
-  {%- endif %}
 </body>
 </html>
