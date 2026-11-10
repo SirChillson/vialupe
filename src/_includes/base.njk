@@ -1,117 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }} — {{ site.title }}</title>
+  <meta name="description" content="{{ description or site.description }}">
   <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="shortcut icon" href="/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <meta name="apple-mobile-web-app-title" content="ViaLupe" />
   <link rel="manifest" href="/site.webmanifest" />
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ title }} — Via Lupe</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
+  {%- if site.substackFeed %}
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.substackFeed }}">
+  {%- endif %}
+  <script>
+    // Apply a saved theme before paint to avoid a flash
+    try { var t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
 </head>
 <body>
-  <canvas id="bg-canvas" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1;"></canvas>
+  <script>if (document.documentElement.dataset.theme) document.body.classList.add(document.documentElement.dataset.theme);</script>
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
   <div class="container">
     <nav>
-      <a class="nav-title" href="/">Via Lupe</a>
+      <a class="nav-title" href="/">{{ site.title }}</a>
       <div class="nav-links">
-        <a href="/writing">Writing</a>
-        <a href="/lupe" id="nav-lupe" class="hidden-nav-link" lang="grc">λύπη</a>
-        <a href="/pirates/">Pirates</a>
-        <a href="/about">About</a>
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">●</button>
+        <a href="/writing/">Writing</a>
+        <a href="/lupe/" lang="grc">λύπη</a>
+        <a href="/about/">About</a>
+        {%- if site.substackUrl %}
+        <a href="{{ site.substackUrl }}/subscribe">Subscribe</a>
+        {%- endif %}
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark mode">●</button>
       </div>
     </nav>
 
-
-<div id="cube-score" class="cube-score hidden">
-  <div id="high-score-label">Best: 0</div>
-  <div id="current-count" class="hidden">0</div>
-</div>
-<div id="cube-scene" class="cube-scene">
-  <div id="cube-shadow" class="cube-shadow"></div>
-  <div class="cube-wrapper" id="cube">
-    <div class="cube-face face-front"><span>Unlikely Adventures<br>Require<br>Unlikely Tools</span></div>
-    <div class="cube-face face-back"><span>Unlikely Adventures<br>Require<br>Unlikely Tools</span></div>
-    <div class="cube-face face-left"><span>Unlikely Adventures<br>Require<br>Unlikely Tools</span></div>
-    <div class="cube-face face-right"><span>Unlikely Adventures<br>Require<br>Unlikely Tools</span></div>
-    <div class="cube-face face-top"><span>Unlikely Adventures<br>Require<br>Unlikely Tools</span></div>
-    <div class="cube-face face-bottom"><span>Unlikely Adventures<br>Require<br>Unlikely Tools</span></div> 
-  </div>
-</div>
+    {%- if page.url == "/" %}
+    {% include "cube.njk" %}
+    {%- endif %}
 
     <main>
       {{ content | safe }}
     </main>
   </div>
 
-<script>
-  const toggle = document.getElementById('themeToggle');
-  const body = document.body;
+  <script>
+    (function () {
+      const toggle = document.getElementById('themeToggle');
+      const body = document.body;
+      const prefersDark = () => window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const isDark = () => body.classList.contains('dark') || (!body.classList.contains('light') && prefersDark());
 
-function updateToggle() {
-  const isDark = body.classList.contains('dark') || 
-    (!body.classList.contains('light') && 
-     window.matchMedia('(prefers-color-scheme: dark)').matches);
-  toggle.textContent = '●';
-  toggle.style.color = isDark ? '#e8e4de' : '#0a0a0a';
-}
+      function paint() { toggle.style.color = isDark() ? '#e8e4de' : '#0a0a0a'; }
 
-  // On load, apply saved preference
-  const saved = localStorage.getItem('theme');
-  if (saved) {
-    body.classList.add(saved);
-  }
-
-  updateToggle();
-
-  toggle.addEventListener('click', () => {
-    if (body.classList.contains('dark')) {
-      body.classList.remove('dark');
-      body.classList.add('light');
-      localStorage.setItem('theme', 'light');
-    } else if (body.classList.contains('light')) {
-      body.classList.remove('light');
-      body.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      if (prefersDark) {
-        body.classList.add('light');
-        localStorage.setItem('theme', 'light');
-      } else {
-        body.classList.add('dark');
-        localStorage.setItem('theme', 'dark');
-      }
-    }
-    updateToggle();
-  });
-    
-</script>
-
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const navLupe = document.getElementById('nav-lupe');
-  
-  // If the secret has been found, unhide the nav link
-  if (localStorage.getItem('lupe_discovered') === 'true') {
-    if (navLupe) {
-      navLupe.style.display = 'inline-block';
-      // Optional: add a class for that ghostly fade-in we discussed
-      navLupe.classList.add('nav-discovered');
-    }
-  }
-});
-</script>
-
-<script src="/js/background.js"></script>
-<script src="/js/discovery.js"></script>
-<script src="/js/identity.js"></script>
-<script src="/js/congreve.js"></script>
+      toggle.addEventListener('click', () => {
+        const next = isDark() ? 'light' : 'dark';
+        body.classList.remove('light', 'dark');
+        body.classList.add(next);
+        try { localStorage.setItem('theme', next); } catch (e) {}
+        paint();
+      });
+      paint();
+    })();
+  </script>
+  <script src="/js/background.js"></script>
+  {%- if page.url == "/" %}
+  <script src="/js/cube.js"></script>
+  {%- endif %}
 </body>
 </html>

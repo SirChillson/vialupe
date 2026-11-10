@@ -3,12 +3,20 @@ title: Home
 layout: base.njk
 ---
 
-<p style="text-align: center;"><i><b>"Via Lupe"</b></i> -- by way of grief, observing reality through the lens of grief</p>
+<div class="home">
+  <p class="home-epigraph"><i>Via lupe</i> — by way of grief.</p>
 
-<p style="text-align: center;"> My name is <span id="name-glitch" class="secret-name">William</span>. Found here are my <i><b>marginalia</b></i>, notes left forever to inhabit the margins. Words, pictures, projects, and secrets. <br>Anything deemed worthy of a word. Maybe more.</p>
+  <p>I'm William, a theological librarian. This is where I write about faith, hospitality, and grief: what it means to welcome one another as we are, and how grief, carried honestly, can become a way of seeing.</p>
 
-<p style="text-align: center;"> Welcome to this place.. a playground of my mind.</p>
-<p><br></p>
-<div id="secret-area" style="height: 200px; display: flex; align-items: center; justify-content: center;">
-  <a href="/lupe" id="lupe-link" class="ghost-link" lang="grc">λύπη</a>
+  <p>New writing every other Sunday, following the church year.</p>
+
+  <p class="home-links">
+    <a href="/writing/">Read the writing</a>
+    {%- if site.substackUrl %}
+    <span aria-hidden="true">·</span>
+    <a href="{{ site.substackUrl }}/subscribe">Subscribe</a>
+    {%- endif %}
+    <span aria-hidden="true">·</span>
+    <a href="/lupe/" lang="grc">What is λύπη?</a>
+  </p>
 </div>
