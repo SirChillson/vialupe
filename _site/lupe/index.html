@@ -1,171 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>λύπη — Via Lupe</title>
+  <meta name="description" content="λύπη (lupē), the New Testament word for grief, and why it names this site.">
   <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="shortcut icon" href="/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <meta name="apple-mobile-web-app-title" content="ViaLupe" />
   <link rel="manifest" href="/site.webmanifest" />
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>λύπη — Via Lupe</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
+  <script>
+    // Apply a saved theme before paint to avoid a flash
+    try { var t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
 </head>
 <body>
-  <canvas id="bg-canvas" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1;"></canvas>
+  <script>if (document.documentElement.dataset.theme) document.body.classList.add(document.documentElement.dataset.theme);</script>
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
   <div class="container">
     <nav>
       <a class="nav-title" href="/">Via Lupe</a>
       <div class="nav-links">
-        <a href="/writing">Writing</a>
-        <a href="/lupe" id="nav-lupe" class="hidden-nav-link" lang="grc">λύπη</a>
-        <a href="/pirates/">Pirates</a>
-        <a href="/about">About</a>
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">●</button>
+        <a href="/writing/">Writing</a>
+        <a href="/lupe/" lang="grc">λύπη</a>
+        <a href="/about/">About</a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark mode">●</button>
       </div>
     </nav>
-
-
-<div id="cube-score" class="cube-score hidden">
-  <div id="high-score-label">Best: 0</div>
-  <div id="current-count" class="hidden">0</div>
-</div>
-<div id="cube-scene" class="cube-scene">
-  <div id="cube-shadow" class="cube-shadow"></div>
-  <div class="cube-wrapper" id="cube">
-    <div class="cube-face face-front"><span>Unlikely Adventures<br>Require<br>Unlikely Tools</span></div>
-    <div class="cube-face face-back"><span>Unlikely Adventures<br>Require<br>Unlikely Tools</span></div>
-    <div class="cube-face face-left"><span>Unlikely Adventures<br>Require<br>Unlikely Tools</span></div>
-    <div class="cube-face face-right"><span>Unlikely Adventures<br>Require<br>Unlikely Tools</span></div>
-    <div class="cube-face face-top"><span>Unlikely Adventures<br>Require<br>Unlikely Tools</span></div>
-    <div class="cube-face face-bottom"><span>Unlikely Adventures<br>Require<br>Unlikely Tools</span></div> 
-  </div>
-</div>
 
     <main>
       
 <article class="definition-page">
   <header class="archival-header">
     <h1 lang="grc">λύπη</h1>
-    <br>
-    <p class="phonetic">/ˈly.pɛː/ • (lu-pe)</p>
+    <p class="phonetic">/ˈly.pɛː/ · lu-pe</p>
   </header>
 
   <section class="etymology">
     <p>
-      In Koine Greek, <em>λύπη</em> is often translated as pain, grief, or distress. In this context, it is understood as a <strong>lens</strong>. A lens through which we observe reality.
+      In Koine Greek, <em lang="grc">λύπη</em> is usually translated pain, grief, or sorrow. Here it is understood as a <strong>lens</strong>, a way of looking at the world.
     </p>
-    
+
     <blockquote>
-      "Via lupe -- by way of grief, observing reality through the lens of grief"
+      Via lupe: by way of grief, observing reality through the lens of grief.
     </blockquote>
 
     <p>
-      Grief is not merely a destination or an obstacle; it is a way of seeing. To look <em>via lupe</em> is to acknowledge that grief can sharpen or blur our perception of the world. It is to understand that grief informs observation and observations deserve to be remembered, saved, and shared. 
+      Grief is not only a destination or an obstacle; it is a way of seeing. To look <em>via lupe</em> is to admit that grief can sharpen or blur what we perceive, and that what we notice through it deserves to be remembered, saved, and shared.
     </p>
   </section>
 
   <section class="marginalia-note">
-    <h2>Notes on <span style="text-transform: lowercase; font-size: 1.1rem">λύπη</span></h2>
+    <h2>Notes on <span lang="grc" class="lowercase">λύπη</span></h2>
 
-    <blockquote class="tdnt-quote" cite="https://your.source.link.if.any">
-        
-        <p>
-            <strong>λύπη</strong>, “pain,” “sorrow”… The opposite is <strong>ἡδονή</strong> [joy, pleasure, delight]… Physically <span lang="grc">λύπη</span> can denote any pain, though especially that caused by hunger or thirst, heat or cold, or by sickness… <strong>Spiritually <span lang="grc">λύπη</span> is sorrow, pain or anxiety at misfortune or death, or anger at annoyances or hurts, especially insults and outrages…</strong>
-        </p>
+    <p>
+      Greek writers set <span lang="grc">λύπη</span> against <span lang="grc">ἡδονή</span>, pleasure or delight. It could name bodily pain, from hunger or cold or sickness, and also the sorrow of misfortune and death, or the sting of insult.
+    </p>
 
-        <p>
-            Joy and sorrow in their alternation are part of human life. <span lang="grc">λύπη</span> and <span lang="grc">ἡδονή</span> are intermingled not merely in the dramas of poets but in the whole tragedy and comedy of life. It is understandable that there should be a desire to live without <span lang="grc">λύπη</span>… But according to Plato’s <em>Philebus</em>, a life in mere self-forgetful <span lang="grc">ἡδονή</span> would be the vegetating of an oyster. <strong>In fact there is no <span lang="grc">ἡδονή</span> without <span lang="grc">λύπη</span>.</strong> Things which seem to be joyous, like marriage and the blessing of children, bring <span lang="grc">λύπη</span>. For joy, <span lang="grc">ἡδονή</span>, is a way of discovering the world. It thus involves evaluation… <strong>It is seen that in every sorrow, <span lang="grc">λύπη</span>, there is raised the question of its <em>raison d’être</em>, so that pain, too, unveils the world for being.</strong>
-        </p>
-        
-        <cite>
-            — <em>Theological Dictionary of the New Testament</em> (TDNT, 1983)
-        </cite>
-    </blockquote>
+    <p>
+      The <em>Theological Dictionary of the New Testament</em> notes that joy and sorrow are woven through the whole of human life, and that even the happiest things, marriage and children, bring their share of grief. It puts it plainly: <q>there is no <span lang="grc">ἡδονή</span> without <span lang="grc">λύπη</span>.</q> Sorrow, too, raises the question of why, and in doing so opens the world to us.
+    </p>
 
-   <!-- <p>
-      From the <i>Theological Dictionary of the New Testament</i>, 1983: <br>λύπη, "pain," "sorrow"... The opposite is ἡδονή [joy, pleasure, delight]... Physically λύπη can denote any pain, though especially
-      that caused by hunger or thirst, heat or cold, or by sickness... Spiritually λύπη is sorrow, pain or anxiety at misfortune or death, or anger at annoyances or hurts, especially insults and outrages... 
-      Joy and sorrow in their alternation are part of human life. λύπη and ἡδονή are intermingled not merely in the dramas of poets but in the whole tragedy and comedy of life. It is understandable 
-      that there should be a desire to live without λύπη... But according to Plato's <i> Philebus</i>, a life in mere self-forgetful ἡδονή would be the vegetating of an oyster. In fact there is no ἡδονή without λύπη. 
-      Things which seem to be joyous, like marriage and the blessing of children, bring λύπη. For joy, ἡδονή, is a way of discovering the world. It thus involves evaluation... It is seen that in every sorrow, 
-      λύπη, there is raised the question of its <i>raison d'être</i>, so that pain, too, unveils the world for being.
+    <p>
+      In the New Testament the word carries that same double edge. Paul writes that <q>godly grief produces a repentance that leads to salvation</q> (2 Corinthians 7:10), and Jesus promises his friends that <q>your grief will turn into joy</q> (John 16:20).
+    </p>
 
-    </p> -->
+    <p class="source-note">See <em>Theological Dictionary of the New Testament</em>, s.v. <span lang="grc">λύπη</span>.</p>
   </section>
 
   <footer>
-    <a href="/" class="back-link">← Return to the margins</a>
+    <a href="/" class="back-link">← Return home</a>
   </footer>
 </article>
+
     </main>
   </div>
 
-<script>
-  const toggle = document.getElementById('themeToggle');
-  const body = document.body;
+  <script>
+    (function () {
+      const toggle = document.getElementById('themeToggle');
+      const body = document.body;
+      const prefersDark = () => window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const isDark = () => body.classList.contains('dark') || (!body.classList.contains('light') && prefersDark());
 
-function updateToggle() {
-  const isDark = body.classList.contains('dark') || 
-    (!body.classList.contains('light') && 
-     window.matchMedia('(prefers-color-scheme: dark)').matches);
-  toggle.textContent = '●';
-  toggle.style.color = isDark ? '#e8e4de' : '#0a0a0a';
-}
+      function paint() { toggle.style.color = isDark() ? '#e8e4de' : '#0a0a0a'; }
 
-  // On load, apply saved preference
-  const saved = localStorage.getItem('theme');
-  if (saved) {
-    body.classList.add(saved);
-  }
-
-  updateToggle();
-
-  toggle.addEventListener('click', () => {
-    if (body.classList.contains('dark')) {
-      body.classList.remove('dark');
-      body.classList.add('light');
-      localStorage.setItem('theme', 'light');
-    } else if (body.classList.contains('light')) {
-      body.classList.remove('light');
-      body.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      if (prefersDark) {
-        body.classList.add('light');
-        localStorage.setItem('theme', 'light');
-      } else {
-        body.classList.add('dark');
-        localStorage.setItem('theme', 'dark');
-      }
-    }
-    updateToggle();
-  });
-    
-</script>
-
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const navLupe = document.getElementById('nav-lupe');
-  
-  // If the secret has been found, unhide the nav link
-  if (localStorage.getItem('lupe_discovered') === 'true') {
-    if (navLupe) {
-      navLupe.style.display = 'inline-block';
-      // Optional: add a class for that ghostly fade-in we discussed
-      navLupe.classList.add('nav-discovered');
-    }
-  }
-});
-</script>
-
-<script src="/js/background.js"></script>
-<script src="/js/discovery.js"></script>
-<script src="/js/identity.js"></script>
-<script src="/js/congreve.js"></script>
+      toggle.addEventListener('click', () => {
+        const next = isDark() ? 'light' : 'dark';
+        body.classList.remove('light', 'dark');
+        body.classList.add(next);
+        try { localStorage.setItem('theme', next); } catch (e) {}
+        paint();
+      });
+      paint();
+    })();
+  </script>
+  <script src="/js/background.js"></script>
 </body>
 </html>

@@ -5,11 +5,26 @@ layout: base.njk
 
 <h1>Writing</h1>
 
+{%- set local = (collections.writing or []) | reverse %}
+{%- if substack.length or local.length %}
 <ul class="writing-list">
-  {%- for post in collections.writing | reverse -%}
+  {%- for post in substack %}
+  <li>
+    <a href="{{ post.url }}">{{ post.title }}</a>
+    <span class="date">{{ post.date | readableDate }}</span>
+  </li>
+  {%- endfor %}
+  {%- for post in local %}
   <li>
     <a href="{{ post.url }}">{{ post.data.title }}</a>
     <span class="date">{{ post.date | readableDate }}</span>
   </li>
-  {%- endfor -%}
+  {%- endfor %}
 </ul>
+{%- else %}
+<p class="empty-note">The first piece arrives on the First Sunday of Advent, November 29.</p>
+{%- endif %}
+
+{%- if site.substackUrl %}
+<p class="subscribe-note"><a href="{{ site.substackUrl }}/subscribe">Subscribe</a> to get new pieces by email.</p>
+{%- endif %}

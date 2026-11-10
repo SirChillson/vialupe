@@ -2,7 +2,6 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("./src/*.{png,svg,ico,webmanifest}");
   eleventyConfig.addPassthroughCopy("./src/js");
-  eleventyConfig.addPassthroughCopy("./src/js");
   eleventyConfig.addPassthroughCopy("./src/images");
 
   // Faster Than Wind: a pre-built Vite game, copied through untouched
